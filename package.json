@@ -7,5 +7,11 @@
     "test": "test"
   },
   "author": "Carlos Luis Burguete",
-  "license": "ISC"
+  "license": "ISC",
+    "dependencies": {
+      "@babel/core": "^7.4.5",
+      "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+      "@babel/plugin-transform-modules-amd": "^7.2.0",
+      "@babel/preset-env": "^7.4.5"
+    }
 }

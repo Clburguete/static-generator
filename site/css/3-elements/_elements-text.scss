@@ -1,6 +1,11 @@
-@import url("https://use.typekit.net/lbh2beb.css");
+// Basic text styles
+// Thus enabling semantic markup independent of their class
 
-b,
-strong {
-  font-weight: $font-weight-bold!important;
+b {
+  font-weight: $font-weight-bold;
 }
+
+i {
+  font-style: italic;
+}
+

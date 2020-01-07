@@ -3,13 +3,9 @@
 // ------------------------------------------------------------------------- //
 
 $bp__sm: 768px; //$screen-sm-min; // 768px
-
 $bp__md: 1024px; //$screen-md-min; // 1024px // tablet-landscape
-
 $bp__lg: 1440px; //$screen-lg; // 1440px
-
-$bp__xl: 2560px; //desktop hd
-
+$bp__xl: 2560px; //hd desktop
 
 $breakpoints: (
     'sm': $bp__sm,
