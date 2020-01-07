@@ -1,0 +1,11 @@
+{
+  "name": "static-generator",
+  "version": "1.0.0",
+  "description": "simple static web generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Carlos Luis Burguete",
+  "license": "ISC"
+}

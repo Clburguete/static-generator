@@ -1,0 +1,7 @@
+.c-three-featured {
+    @include media-breakpoint(sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+    }
+}

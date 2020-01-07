@@ -1,0 +1,323 @@
+.c-course-description {
+
+    &__title {
+        padding: 10px;
+        border-bottom: 1px solid $color-black;
+        font-size: rem(22);
+        font-weight: $font-weight-bold;
+    }
+
+    &__list {
+        padding: $mobile-padding $mobile-padding 0;
+        border-bottom: 1px solid $color-black;
+    }
+
+    &__list-item {
+        @include position(relative);
+        margin-bottom: $mobile-padding;
+        font-size: rem(18);
+        line-height: rem(18);
+
+        &::before {
+            content: '•';
+            position: absolute;
+            top: calc(50% - 10px);
+            left: -26px;
+            font-size: rem(40);
+        }
+    }
+
+    &__project {
+        @include position(relative);
+        padding: $mobile-padding;
+        border-bottom: 1px solid $color-black;
+    }
+
+    &__project-header {
+        font-size: rem(14);
+        font-weight: $font-weight-bold;
+    }
+
+    &__project-text {
+        display: block;
+        font-size: rem(18);
+        font-weight: $font-weight-bold;
+    }
+
+    &__target {
+        @include position(relative);
+        padding: $mobile-padding;
+    }
+
+    &__target-header {
+        font-size: rem(14);
+        font-weight: $font-weight-bold;
+    }
+
+    &__target-text {
+        display: block;
+        margin-bottom: 10px;
+        font-size: rem(18);
+    }
+
+    &__arrow {
+        display: block;
+        height: 10px;
+        margin-top: 8px;
+        margin-bottom: 36px;
+
+        @include media-breakpoint(xl) {
+            height: 18px;
+        }
+
+        &--project {
+
+            @include media-breakpoint(sm) {
+                @include position(absolute, $bottom: 66px);
+                display: flex;
+                justify-content: flex-end;
+                order: 2;
+                margin: 0;
+                transform: rotate(180deg);
+            }
+
+            @include media-breakpoint(xl) {
+                bottom: 150px;
+            }
+        }
+
+        &--target {
+
+            @include media-breakpoint(sm) {
+                @include position(absolute, $top: 80px);
+                margin: 0;
+            }
+
+            @include media-breakpoint(xl) {
+                top: 150px;
+            }
+        }
+    }
+
+    &__breadcrumb {
+        margin-bottom: 4px;
+    }
+
+    &__requisite {
+        display: block;
+        margin-bottom: 10px;
+        font-size: rem(22);
+        font-weight: $font-weight-bold;
+    }
+
+    &__requisite-text {
+        display: block;
+        font-size: rem(22);
+        font-weight: $font-weight-regular;
+    }
+
+    @include media-breakpoint(sm) {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__info {
+            border-bottom: 1px solid $color-black;
+        }
+
+        &__title {
+            font-size: rem(34);
+            padding: 20px;
+        }
+
+        &__project,
+        &__target {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        &__project {
+            border-right: 1px solid $color-black;
+            border-bottom: none;
+        }
+
+        &__project-header {
+            order: 3;
+        }
+
+        &__project-text {
+            font-size: rem(34);
+            margin-top: 6px;
+            margin-bottom: 100px;
+        }
+
+        &__target {
+            justify-content: space-between;
+        }
+
+        &__target-header {
+            font-size: rem(16);
+        }
+
+        &__list {
+            padding: 40px;
+            border-bottom: none;
+        }
+
+        &__list-item {
+            margin-bottom: 40px;
+            line-height: rem(20);
+
+            &:before {
+                left: -46px;
+            }
+
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    @include media-breakpoint(md) {
+        display: grid;
+        grid-template-columns: minmax(50%, 50%) minmax(50%, 50%);
+
+        &__info {
+            grid-row: row-start 2 / span 2;
+            border-bottom: none;
+        }
+
+        &__title {
+            font-size: rem(38);
+            padding: $mobile-padding 40px;
+        }
+
+        &__project, &__target {
+            width: unset;
+        }
+
+        &__project {
+            display: flex;
+            grid-row: row-start 2 / span 1;
+            border-right: none;
+            border-bottom: 1px solid $color-black;
+            border-left: 1px solid $color-black;
+        }
+
+        &__project-text {
+            flex-grow: 1;
+            font-size: rem(38);
+        }
+
+        &__target {
+            grid-row: row-start 3 / span 1;
+            min-height: 374px;
+            border-left: 1px solid $color-black;
+        }
+
+        &__list {
+            height: calc(100% - 79px);
+        }
+
+        &__list-item {
+            font-size: rem(22);
+            margin-bottom: 30px;
+        }
+
+        &__img {
+            height: 512px;
+        }
+
+        &__project-header {
+            font-size: rem(16);
+        }
+
+        &__target-header,
+        &__target-text {
+            font-size: rem(22);
+        }
+    }
+
+    @include media-breakpoint(lg) {
+        grid-template-columns: 2fr 1fr;
+
+        &__title {
+            font-size: rem(48);
+            padding: 36px 40px;
+        }
+
+        &__list {
+            height: calc(100% - 121px);
+        }
+
+        &__list-item {
+            margin-bottom: 40px;
+            font-size: rem(22);
+        }
+
+        &__project {
+            border-top: none;
+        }
+
+        &__project-text {
+            margin-bottom: 64px;
+            font-size: rem(40);
+        }
+
+        &__project-header {
+            font-size: rem(16);
+        }
+
+        &__target-header {
+            margin-bottom: 50px;
+            font-size: rem(16);
+        }
+    }
+
+    @include media-breakpoint(xl) {
+        &__title {
+            padding: 50px 100px;
+            font-size: rem(85);
+        }
+
+        &__project-text {
+            font-size: rem(72);
+        }
+
+        &__target-text {
+            font-size: rem(42);
+        }
+
+        &__list {
+            height: calc(100% - 186px);
+            padding: 100px;
+        }
+
+        &__list-item {
+            margin-bottom: 100px;
+            font-size: rem(42);
+            line-height: rem(48);
+            &:before {
+                top: calc(50% - 22px);
+                left: -110px;
+                font-size: rem(70);
+            }
+        }
+
+        &__project,
+        &__target {
+            padding: 100px;
+        }
+
+        &__project-header,
+        &__target-header {
+            font-size: rem(28);
+        }
+
+        &__requisite,
+        &__requisite-text {
+            font-size: rem(38);
+        }
+    }
+}

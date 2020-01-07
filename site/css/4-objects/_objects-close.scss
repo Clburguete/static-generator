@@ -1,0 +1,29 @@
+.o-close {
+    @include position(absolute, $top: 20px, $right: 5%);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 0;
+
+    &:hover {
+        opacity: .7;
+    }
+
+    &:before,
+    &:after {
+        @include position(absolute, $top: 0, $right: 0, $left: 0);
+        content: '';
+        width: 2px;
+        height: 16px;
+        margin: auto;
+        background-color: $title-color-active;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}

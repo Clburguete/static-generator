@@ -1,0 +1,10 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100">
+    <defs/>
+    <g fill="none" fill-rule="evenodd" stroke="#000">
+        <path d="M.5.5h99v99H.5z"/>
+        <path d="M80.5 50c0 16.568-13.432 30-30 30-16.568 0-30-13.432-30-30 0-16.568 13.432-30 30-30"/>
+        <path d="M43 14l8 5.815L45.317 28"/>
+    </g>
+</svg>

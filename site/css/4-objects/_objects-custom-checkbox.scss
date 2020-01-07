@@ -1,0 +1,64 @@
+.o-custom-checkbox {
+    position: relative;
+    display: block;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: $color-default-text;
+    font-family: $font-family-base;
+    font-size: rem(14);
+    line-height: rem(17);
+
+    &__input {
+        @include position(absolute, $left: 0);
+        width: $checkbox-size;
+        height: $checkbox-size;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__check {
+        @include position(absolute, $top: 0, $left: 0);
+        box-sizing: border-box;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        border-radius: 2px;
+        border: 1px solid $border-color-active;
+        background-color: $color-white;
+
+        &:after {
+            @include position(absolute, $top: 0, $left: 5px);
+            content: "";
+            display: none;
+            width: 4px;
+            height: 10px;
+            border: solid $color-white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        &:focus {
+            border-color: $color-primary;
+        }
+    }
+}
+
+.o-custom-checkbox__input:checked ~ .o-custom-checkbox__check {
+    background-color: $link-color;
+
+    &:after {
+        display: block;
+    }
+}
+
+.o-custom-checkbox__input:focus ~ .o-custom-checkbox__check {
+    outline: thin dotted;
+}
+
+.o-custom-checkbox__input:checked ~ .o-custom-checkbox__label {
+    font-weight: $font-weight-bold;
+}
+
+

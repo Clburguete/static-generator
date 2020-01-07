@@ -1,0 +1,83 @@
+.c-section-title {
+    $self: &;
+    display: flex;
+    border-top: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+
+    @include media-breakpoint(sm) {
+        padding: $mobile-padding;
+        justify-content: space-between;
+    }
+
+    @include media-breakpoint(md) {
+        padding: $mobile-padding 40px;
+    }
+
+    @include media-breakpoint(lg) {
+        padding: 36px 40px;
+    }
+
+    @include media-breakpoint(xl) {
+        padding: 50px 100px;
+    }
+
+    &__helper {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 48px);
+        padding: 10px 0 10px 10px;
+        font-size: rem(22);
+        font-weight: $font-weight-bold;
+
+        @include media-breakpoint(sm) {
+            padding: 0;
+            width: auto;
+            font-size: rem(34);
+        }
+
+        @include media-breakpoint(md) {
+            font-size: rem(38);
+        }
+
+        @include media-breakpoint(lg) {
+            font-size: rem(48);
+        }
+
+        @include media-breakpoint(xl) {
+            font-size: rem(85);
+        }
+    }
+
+    &--right {
+        @include media-breakpoint(sm) {
+            justify-content: flex-end;
+            height: 80px;
+        }
+    }
+
+    &--list {
+        justify-content: center;
+        border-top: none;
+
+        #{ $self }__helper {
+            width: auto;
+            text-transform: uppercase;
+
+            @include media-breakpoint(sm) {
+                font-size: rem(22);
+            }
+
+            @include media-breakpoint(md) {
+                font-size: rem(30);
+            }
+
+            @include media-breakpoint(lg) {
+                font-size: rem(36);
+            }
+
+            @include media-breakpoint(xl) {
+                font-size: rem(72);
+            }
+        }
+    }
+}

@@ -1,0 +1,300 @@
+.c-header {
+    $self: &;
+    @include position(absolute, $top: 0, $left:0, $right:0);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    color: $color-white;
+
+    @include media-breakpoint(sm) {
+        align-items: flex-start;
+    }
+
+    &__logo-container{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 184px;
+        font-weight: $font-weight-bold;
+        font-size: rem(20);
+        color: $color-white;
+        z-index: 1;
+
+        @include media-breakpoint(sm) {
+            max-width: unset;
+        }
+    }
+
+    &__logo {
+        height: 60px;
+        width: 60px;
+        background-color: $color-primary;
+    }
+
+    &__logo-shots {
+        @include position(relative, $top:25%, $left: 25%);
+        height: 50%;
+        width: 50%;
+        background-color: $color-white;
+        border-radius: 50%;
+    }
+
+    &__logo-brand {
+        display: none;
+        background-color: $color-black;
+        height: 40px;
+        padding: 10px;
+    }
+
+    &__logo-default {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 10px;
+        font-size: rem(30);
+        background-color: $color-black;
+
+        @include media-breakpoint(sm) {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 0 15px;
+            font-size: rem(30);
+        }
+
+        @include media-breakpoint(md) {
+            margin-top: 60px;
+        }
+    }
+
+    &__menu-icon {
+        @include position(relative, $top: 20px, $right: 20px);
+        width: 20px;
+        height: 20px;
+        background: none;
+        cursor: pointer;
+
+        @include media-breakpoint(sm) {
+            @include position(relative, $top: 20px, $right: 20px);
+        }
+
+        @include media-breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__close {
+        @include position(absolute, $top: 20px, $right: 20px);
+        height: 22px;
+        width: 22px;
+        cursor: pointer;
+
+        @include media-breakpoint(sm) {
+            top: 40px;
+            right: 40px;
+        }
+
+        @include media-breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        display: none;
+        height: 60px;
+
+        @include media-breakpoint(md) {
+            display: flex;
+            max-width: 50%;
+            padding: 0 60px 0 20px;
+        }
+
+        @include media-breakpoint(lg) {
+            width: 40%;
+        }
+
+        @include media-breakpoint(xl) {
+            width: 30%;
+        }
+
+        &.is-open {
+            @include position(fixed, $top: 0, $left: 0, $right: 0);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: $background-color-default;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 140px;
+        color: $color-black;
+        font-size: rem(24);
+
+        @include media-breakpoint(sm) {
+            width: 100%;
+            font-size: rem(16);
+            font-weight: $font-weight-bold;
+        }
+
+        @include media-breakpoint(md) {
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-top: unset;
+        }
+
+        &--media-bg {
+            @include media-breakpoint(md) {
+                color: $color-white;
+            }
+        }
+    }
+
+    &__nav-item {
+        margin-bottom: 30px;
+        border-top: 5px solid rgba(0,0,0,0);
+        font-weight: $font-weight-bold;
+
+        @include media-breakpoint(md) {
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+
+        @include media-breakpoint(lg) {
+            margin-right: 40px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--active {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 5px solid $color-primary;
+            color: $color-primary;
+
+            @include media-breakpoint(md) {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-top: 5px solid $color-primary;
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__brand {
+        @include position(absolute, $bottom: 30px, $left: 30px);
+        width: 170px;
+
+        @include media-breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &--brand {
+        @extend .c-header;
+        @include position(initial);
+        border-bottom: 1px solid $color-black;
+        color: $color-black;
+
+        @include media-breakpoint(sm) {
+            align-items: unset;
+        }
+
+        #{ $self }__logo {
+          height: 40px;
+          width: 40px;
+
+            @include media-breakpoint(sm) {
+                width: 60px;
+                height: 60px;
+            }
+
+            @include media-breakpoint(md) {
+                height: $header-height;
+                width: $header-height;
+            }
+
+            @include media-breakpoint(xl) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        #{ $self }__logo-brand {
+            display: flex;
+            align-items: center;
+            height: rem(40);
+
+            @include media-breakpoint(sm) {
+                height: 60px;
+                padding: 0 15px;
+                font-size: rem(30);
+            }
+
+            @include media-breakpoint(md) {
+                height: $header-height;
+                margin-top: $header-height;
+            }
+
+            @include media-breakpoint(lg) {
+                display: flex;
+                align-items: center;
+            }
+
+            @include media-breakpoint(xl) {
+                height: 100px;
+                margin-top: 100px;
+                font-size: rem(50);
+            }
+        }
+
+        #{ $self }__logo-default {
+            height: 40px;
+            font-size: rem(20);
+            align-items: center;
+            background-color: $color-primary;
+            color: $color-black;
+
+            @include media-breakpoint(sm) {
+                height: 60px;
+                padding: 0 15px;
+                font-size: rem(30);
+            }
+
+            @include media-breakpoint(md) {
+                height: $header-height;
+                margin-top: 0;
+            }
+
+            @include media-breakpoint(lg) {
+                display: flex;
+                align-items: center;
+                height: 60px;
+                padding: 15px;
+                font-size: 30px;
+            }
+
+            @include media-breakpoint(xl) {
+                height: 100px;
+                font-size: rem(50);
+            }
+        }
+
+        #{ $self }__nav {
+
+            @include media-breakpoint(xl) {
+                height: 100px;
+            }
+        }
+    }
+}

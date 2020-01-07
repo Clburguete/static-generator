@@ -1,0 +1,10 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100">
+    <defs/>
+    <g fill="none" fill-rule="evenodd" stroke="#000">
+    <path d="M.5.5h99v99H.5z"/>
+    <path d="M70 30c11.046 0 20 8.954 20 20 0 10.93-8.769 19.813-19.656 19.997L70 70H30c-11.046 0-20-8.954-20-20s8.954-20 20-20h40z"/>
+    <circle cx="30" cy="50" r="20"/>
+    </g>
+</svg>

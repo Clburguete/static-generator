@@ -1,0 +1,152 @@
+.o-form {
+    &__title {
+        color: $color-default-text;
+        font-family: $font-family-base;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        font-size: rem(14);
+        line-height: rem(22);
+    }
+
+    &__hint {
+        display: block;
+        margin-top: 5px;
+        opacity: .5;
+        font-family: $font-family-base;
+        font-size: rem(13);
+        line-height: rem(20);
+    }
+
+    &__input {
+        box-sizing: border-box;
+        border: 1px solid $border-color-active;
+        box-shadow: none;
+        border-radius: 5px;
+        height: 50px;
+        padding: 14.5px 15px;
+        width: 100%;
+        overflow: visible;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-family: $font-family-base;
+        font-size: rem(14);
+        line-height: rem(16);
+
+        &.has-error {
+            border-color: $color-error;
+            color: $color-error;
+        }
+
+        &::placeholder {
+            opacity: .5;
+        }
+
+        &.is-disable,
+        &:disabled {
+            background-color: $color-disable;
+
+            & + .o-form__hint {
+                opacity: 1;
+            }
+        }
+
+        &:focus {
+            border-color: $color-primary;
+        }
+
+        @include media-breakpoint(md) {
+            font-size: rem($font-size);
+        }
+
+        &--placeholder {
+            background-color: $color-primary;
+            border-color: $color-primary;
+            font-size: rem(16);
+        }
+    }
+
+    &__textarea {
+        box-sizing: border-box;
+        border: 1px solid $border-color-active;
+        border-radius: 5px;
+        padding: 17px 15px;
+        width: 100%;
+        height: 120px;
+        overflow: visible;
+        resize: vertical;
+        font-family: $font-family-base;
+        font-size: rem(14);
+        line-height: rem(16);
+
+        &.has-error {
+            border-color: $color-error;
+            color: $color-error;
+        }
+
+        &::placeholder {
+            opacity: .5;
+        }
+
+        &.is-disable,
+        &:disabled {
+            background-color: $color-disable;
+
+            & + .o-form__hint {
+                opacity: 1;
+            }
+        }
+
+        &:focus {
+            border-color: $color-primary;
+        }
+
+        @include media-breakpoint(md) {
+            height: 100px;
+            font-size: rem($font-size);
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 5px;
+        font-family: $font-family-base;
+        font-size: rem(14);
+        color: $color-default-text;
+        line-height: rem(20);
+
+        &--hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &--secondary {
+            color: $color-default-text;
+            font-family: $font-family-secondary;
+            font-weight: $font-weight-regular;
+            font-size: rem(14);
+            line-height: rem(24);
+        }
+    }
+
+    &__select {
+        appearance: none;
+        background-color: $color-white;
+        background-image: linear-gradient(45deg,transparent calc(50% - 1px),#616161 50%,transparent calc(50% + 1px)),linear-gradient(135deg,transparent calc(50% - 1px),#616161 50%,transparent calc(50% + 1px));
+        background-position: calc(100% - 23px) 50%,calc(100% - 17px) 50%;
+        background-repeat: no-repeat;
+        background-size: 7px 7px,7px 7px;
+        overflow: visible;
+
+        @include media-breakpoint(md) {
+            height: 50px;
+        }
+    }
+
+    &__error {
+        margin-top: 5px;
+        font-size: rem(12);
+        line-height: rem(14);
+        color: $color-error;
+    }
+}

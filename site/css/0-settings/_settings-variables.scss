@@ -1,0 +1,52 @@
+$color-default-text: #1d1c1c;
+
+$color-primary: #e02020;
+$color-secondary: #999999;
+
+// Common
+$color-black: #000000;
+$color-gray: #d8d8d8;
+$color-white: #ffffff;
+$color-transparent: transparent;
+
+
+$color-disable: #edeff1;
+$color-error: #ffedee; 
+
+$background-color-default: $color-white;
+
+$font-size: 16;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-secondary: 'miller-text', sans-serif;
+$font-weight-base: normal;
+$line-height-base: 1.5;
+
+$body-color: $color-default-text;
+
+$link-decoration: none;
+$link-color: $color-black;
+$link-hover-color: $color-black;
+$link-hover-decoration: none;
+
+
+$title-color-active: $color-primary;
+$border-color-active: $color-primary;
+$title-color-disable: $color-secondary;
+$border-color-disable: $color-secondary;
+$max-width-container: 1150;
+$max-width-container-px: $max-width-container + px;
+
+$header-height: 60px;
+$header-height-md: 185px;
+$radio-size-sm: 20px;
+$radio-size-md: 15px;
+
+$brand-logo-height: 80px;
+
+$checkbox-size: 17px;
+
+$mobile-padding: 20px;

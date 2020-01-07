@@ -1,0 +1,49 @@
+.u-full-width-container {
+  display: flex !important;
+  justify-content: center;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.u-full-width-tablet {
+  @include media-breakpoint(md--max) {
+    display: flex !important;
+    justify-content: center;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.u-display-flex {
+  display: flex !important;
+}
+
+.u-bg-brand {
+  background-color: $color-primary !important;
+}
+
+.u-align-left {
+  justify-content: flex-end !important;
+}
+
+.u-position-initial {
+  position: initial;
+}
+
+.u-border-top {
+  border-top: 1px solid $color-black;
+}
+
+.u-no-top-border {
+  border-top: none;
+}
+
+.u-border-bottom {
+  border-bottom: 1px solid $color-black;
+}
+
+.u-color-black {
+  color: $color-black;
+}

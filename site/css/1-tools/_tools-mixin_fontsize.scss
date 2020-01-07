@@ -1,0 +1,9 @@
+// ----- rem ----- //
+//REM conversor
+//use:
+//  .element {
+//    height: rem(50);
+//   }
+@function rem($size) {
+    @return #{$size / $font-size}rem;
+}

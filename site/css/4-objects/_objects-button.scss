@@ -1,0 +1,122 @@
+.o-button {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: $mobile-padding 0 $mobile-padding;
+    background-color: $color-primary;
+    height: 60px;
+    font-size: rem(16);
+    font-weight: $font-weight-bold;
+    text-align: center;
+    color: $color-white;
+
+    @include media-breakpoint(sm) {
+        height: 54px;
+    }
+
+    @include media-breakpoint(md) {
+        height: 60px;
+        color: $color-black;
+        background-color: $background-color-default;
+        border: 1px solid $color-black;
+    }
+
+    @include media-breakpoint(lg) {
+        font-size: rem(18);
+    }
+
+    @include media-breakpoint(xl) {
+        height: 100px;
+        font-size: rem(32);
+    }
+
+    &:hover {
+        background-color: $link-hover-color;
+        color: $color-white;
+    }
+
+    &--primary {
+        width: 100%;
+        padding: 13px 0;
+        background-color: $link-color;
+        color: $color-white;
+        font-family: $font-family-base;
+        font-size: rem($font-size);
+        font-weight: $font-weight-regular;
+        text-transform: uppercase;
+
+        @include media-breakpoint(md) {
+            width: auto;
+            padding: 18px 30px;
+            font-size: rem(18);
+        }
+    }
+
+    /**
+     * Ghost buttons have see-through backgrounds and are bordered.
+     */
+
+    &--ghost {
+        padding: 4px 10px;
+        border: 1px solid $link-hover-color;
+        background-color: transparent;
+        color: $link-hover-color;
+        font-family: $font-family-base;
+        font-size: rem(14);
+        line-height: rem(24);
+    }
+
+    &--large {
+        width: 100%;
+    }
+}
+
+.o-button-text {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: $color-default-text;
+    font-family: $font-family-base;
+    font-size: rem(16);
+    line-height: rem(18);
+
+    &:hover {
+        opacity: .5;
+    }
+
+    &--underline {
+        text-decoration: underline;
+    }
+}
+
+.o-button-sticky {
+    @include position(fixed, $bottom: 15px, $left: 0, $right: 0);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: $color-primary;
+    color: $color-white;
+    font-family: $font-family-base;
+    font-size: rem(14);
+    font-weight: $font-weight-regular;
+    letter-spacing: 1px;
+    line-height: rem(18);
+    text-transform: uppercase;
+
+    &.is-active {
+        display: flex;
+    }
+
+    @include media-breakpoint(md) {
+        &.is-active {
+            display: none;
+        }
+    }
+}
+

@@ -1,0 +1,22 @@
+.c-breadcrumb {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: rem(11);
+    
+    &.is-active {
+        margin: 0;
+        font-weight: $font-weight-bold;
+    }
+}
+
+@include media-breakpoint(lg) {
+    .c-breadcrumb {
+        font-size: rem(14);
+    }
+}
+
+@include media-breakpoint(xl) {
+    .c-breadcrumb {
+        font-size: rem(22);
+    }
+}
