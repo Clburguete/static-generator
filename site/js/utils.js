@@ -12,15 +12,3 @@ export const instanceClass = (cssClass, jsClass) => {
     instancedClass.init();
   })
 }
-
-
-const instanceSlider = sliderClass => {
-  const slider = tns({
-    container: `.${sliderClass}`,
-    controls: false,
-    items: 1,
-    slideBy: 'page',
-    swipeAngle: false,
-    speed: 400
-  });
-}
