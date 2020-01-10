@@ -36,13 +36,23 @@
   border-top: 1px solid $color-black;
 }
 
+.u-border-bottom {
+  border-bottom: 1px solid $color-black;
+}
+
+.u-border-left {
+  border-left: 1px solid $color-black;
+}
+
+.u-border-right {
+  border-right: 1px solid $color-black;
+}
+
 .u-no-top-border {
   border-top: none;
 }
 
-.u-border-bottom {
-  border-bottom: 1px solid $color-black;
-}
+
 
 .u-color-black {
   color: $color-black;
