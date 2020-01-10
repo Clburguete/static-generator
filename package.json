@@ -8,10 +8,15 @@
   },
   "author": "Carlos Luis Burguete",
   "license": "ISC",
-    "dependencies": {
-      "@babel/core": "^7.4.5",
-      "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-      "@babel/plugin-transform-modules-amd": "^7.2.0",
-      "@babel/preset-env": "^7.4.5"
-    }
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-amd": "^7.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "@babel/preset-env": "^7.4.5",
+    "webpack": "^4.41.5"
+  }
 }
