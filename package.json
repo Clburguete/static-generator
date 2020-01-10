@@ -4,7 +4,8 @@
   "description": "simple static web generator",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Carlos Luis Burguete",
   "license": "ISC",
