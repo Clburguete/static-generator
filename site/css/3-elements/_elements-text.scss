@@ -2,10 +2,10 @@
 // Thus enabling semantic markup independent of their class
 
 b {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold!important;
 }
 
 i {
-  font-style: italic;
+  font-style: $font-style-italic!important;
 }
 
