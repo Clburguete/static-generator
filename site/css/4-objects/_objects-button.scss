@@ -35,18 +35,14 @@
         color: $color-white;
     }
 
-    /**
-     * Ghost buttons have see-through backgrounds and are bordered.
-     */
+/**
+    * Ghost buttons have see-through backgrounds and are bordered.
+*/
 
     &--ghost {
-        padding: 4px 10px;
         border: 1px solid $link-hover-color;
         background-color: $color-transparent;
         color: $link-hover-color;
-        font-family: $font-family-base;
-        font-size: rem(14);
-        line-height: rem(24);
 
         &:hover {
             background-color: $color-text-default;
