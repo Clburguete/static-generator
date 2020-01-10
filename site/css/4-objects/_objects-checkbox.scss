@@ -1,4 +1,4 @@
-.o-custom-checkbox {
+.o-checkbox {
     position: relative;
     display: block;
     padding-left: 22px;
@@ -45,7 +45,7 @@
     }
 }
 
-.o-custom-checkbox__input:checked ~ .o-custom-checkbox__check {
+.o-checkbox__input:checked ~ .o-checkbox__check {
     background-color: $link-color;
 
     &:after {
@@ -53,11 +53,11 @@
     }
 }
 
-.o-custom-checkbox__input:focus ~ .o-custom-checkbox__check {
+.o-checkbox__input:focus ~ .o-checkbox__check {
     outline: thin dotted;
 }
 
-.o-custom-checkbox__input:checked ~ .o-custom-checkbox__label {
+.o-checkbox__input:checked ~ .o-checkbox__label {
     font-weight: $font-weight-bold;
 }
 
