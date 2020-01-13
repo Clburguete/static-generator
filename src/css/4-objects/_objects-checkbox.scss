@@ -5,7 +5,7 @@
     margin-bottom: 12px;
     cursor: pointer;
     user-select: none;
-    color: $color-default-text;
+    color: $text-color-default;
     font-family: $font-family-base;
     font-size: rem(14);
     line-height: rem(17);
@@ -25,7 +25,7 @@
         width: $checkbox-size;
         height: $checkbox-size;
         border-radius: 2px;
-        border: 1px solid $border-color-active;
+        border: 1px solid $border-color;
         background-color: $color-white;
 
         &:after {

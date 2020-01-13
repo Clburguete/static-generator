@@ -1,17 +1,22 @@
 // Colors
 
 // @text
-$color-text-default: #1d1c1c;
-$color-text-error: #e02020;
+$text-color-default: #1d1c1c;
+$text-color-error: #e02020;
+$background-color-default: #fff;
 
 // @common
 $color-primary: #e02020;
 $color-secondary: #999999;
 $color-black: #000000;
 $color-gray: #d8d8d8;
-$color-white: #ffffff;
+$color-white: #fff;
 $color-transparent: transparent;
 $color-disable: #edeff1;
+
+// @border
+$border-color-default: #1d1c1c;
+$border-color: $border-color-default;
 
 // Fonts
 
@@ -43,7 +48,7 @@ $link-hover-decoration: none;
 // Options
 
 $radio-size-sm: 20px;
-$radio-size-md: 16px;
+$radio-size: 16px;
 $checkbox-size-sm: 20px;
-$checkbox-size-md: 16px;
+$checkbox-size: 16px;
 

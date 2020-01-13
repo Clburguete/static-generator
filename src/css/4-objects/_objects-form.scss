@@ -1,6 +1,6 @@
 .o-form {
     &__title {
-        color: $color-default-text;
+        color: $text-color-default;
         font-family: $font-family-base;
         font-weight: $font-weight-bold;
         text-transform: uppercase;
@@ -19,7 +19,7 @@
 
     &__input {
         box-sizing: border-box;
-        border: 1px solid $border-color-active;
+        border: 1px solid $border-color;
         box-shadow: none;
         border-radius: 5px;
         height: 50px;
@@ -34,8 +34,8 @@
         line-height: rem(16);
 
         &.has-error {
-            border-color: $color-error;
-            color: $color-error;
+            border-color: $text-color-error;
+            color: $text-color-error;
         }
 
         &::placeholder {
@@ -68,7 +68,7 @@
 
     &__textarea {
         box-sizing: border-box;
-        border: 1px solid $border-color-active;
+        border: 1px solid $border-color;
         border-radius: 5px;
         padding: 17px 15px;
         width: 100%;
@@ -80,8 +80,8 @@
         line-height: rem(16);
 
         &.has-error {
-            border-color: $color-error;
-            color: $color-error;
+            border-color: $text-color-error;
+            color: $text-color-error;
         }
 
         &::placeholder {
@@ -112,7 +112,7 @@
         margin-bottom: 5px;
         font-family: $font-family-base;
         font-size: rem(14);
-        color: $color-default-text;
+        color: $text-color-default;
         line-height: rem(20);
 
         &--hidden {
@@ -121,7 +121,7 @@
         }
 
         &--secondary {
-            color: $color-default-text;
+            color: $text-color-default;
             font-family: $font-family-secondary;
             font-weight: $font-weight-regular;
             font-size: rem(14);
@@ -147,6 +147,6 @@
         margin-top: 5px;
         font-size: rem(12);
         line-height: rem(14);
-        color: $color-error;
+        color: $text-color-error;
     }
 }

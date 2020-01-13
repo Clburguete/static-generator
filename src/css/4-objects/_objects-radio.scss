@@ -3,7 +3,7 @@
         font-family: $font-family-base;
         font-weight: $font-weight-regular;
         font-size: rem(12);
-        color: $color-default-text;
+        color: $text-color-default;
         line-height: rem(18);
 
         @include media-breakpoint(md) {
