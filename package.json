@@ -4,14 +4,25 @@
   "description": "simple static web generator",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config config/webpack.js"
   },
   "author": "Carlos Luis Burguete",
   "license": "ISC",
-    "dependencies": {
-      "@babel/core": "^7.4.5",
-      "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-      "@babel/plugin-transform-modules-amd": "^7.2.0",
-      "@babel/preset-env": "^7.4.5"
-    }
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-amd": "^7.2.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
 }

@@ -1,5 +1,3 @@
-import { tns } from "./../../../node_modules/tiny-slider/src/tiny-slider";
-
 export const instanceClass = (cssClass, jsClass) => {
   const elements = [...document.getElementsByClassName(cssClass)];
 

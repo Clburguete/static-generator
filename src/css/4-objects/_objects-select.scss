@@ -11,7 +11,7 @@
         width: 7px;
         height: 7px;
         margin: auto;
-        border: solid $color-default-text;
+        border: solid $text-color-default;
         border-width: 2px 2px 0 0;
         transform: rotate(135deg);
     }
@@ -20,7 +20,6 @@
         width: 100%;
         background-color: transparent;
         border: 0;
-        color: $title-color-active;
         font-family: $font-family-base;
         font-size: rem(16);
         font-weight: $font-weight-regular;
