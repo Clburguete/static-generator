@@ -1,4 +1,5 @@
-const { getHtmlConfig } = require("./utils.js"),
+const 
+  { getHtmlConfig } = require("./utils.js"),
   globby = require("globby"),
   path = require("path"),
   MiniCssExtractPlugin = require("mini-css-extract-plugin"),
@@ -10,20 +11,22 @@ module.exports = async () => {
     paths = await globby(['src/html/**']),
     HtmlWebpackConfig = getHtmlConfig(paths);
 
+    
   return {
-    entry: "/src/js/index.js",
+    entry: "./src/js/index.js",
     output: {
-      filename: "index.js",
+      filename: "js/index.js",
       path: path.resolve("dist"),
-      publicPath: '/'
     },
     devServer: {
-      contentBase: '../dist'
+      openPage: 'index.html'
     },
     plugins: [
       new CleanWebpackPlugin(),
       ...HtmlWebpackConfig,
-      new MiniCssExtractPlugin()
+      new MiniCssExtractPlugin({
+        filename: 'css/main.css'
+      })
     ],
     module: {
       rules: [
