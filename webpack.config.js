@@ -1,4 +1,7 @@
-const path = require("path");
+const
+    path = require("path"),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: "./src/js/index.js",
@@ -6,12 +9,31 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "dist")
   },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new MiniCSSExtractPlugin()
+  ],
   module: {
     rules: [
-      //   {
-      //     test: /\.css$/,
-      //     use: ["style-loader", "css-loader"]
-      //   },
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        query: {
+          presets: ["@babel/preset-env"],
+          plugins: [
+            "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-transform-modules-amd"
+          ]
+        }
+      },
+      {
+        test: /\.scss$/,
+        loader: [
+          MiniCSSExtractPlugin.loader,
+          "css-loader",
+          'sass-loader'
+        ]
+      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ["file-loader"]
