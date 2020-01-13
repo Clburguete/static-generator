@@ -11,11 +11,14 @@ module.exports = async () => {
     HtmlWebpackConfig = getHtmlConfig(paths);
 
   return {
-    entry: "./src/js/index.js",
+    entry: "/src/js/index.js",
     output: {
       filename: "index.js",
       path: path.resolve("dist"),
       publicPath: '/'
+    },
+    devServer: {
+      contentBase: '../dist'
     },
     plugins: [
       new CleanWebpackPlugin(),
