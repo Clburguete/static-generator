@@ -10,8 +10,10 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   plugins: [
-    new HtmlWebpackPlugin(),
-    new MiniCSSExtractPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/html/index.html'
+    }),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
@@ -29,7 +31,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: [
-          MiniCSSExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           'sass-loader'
         ]
