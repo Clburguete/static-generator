@@ -7,7 +7,7 @@ import './../css/index.scss';
 // Call instanceClass(cssClass, jsClass) for every interactive element
 
 window.onload = () => {
-
+    console.log('hi')
 }
 
  
