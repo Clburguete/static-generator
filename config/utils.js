@@ -53,27 +53,9 @@ const getHtmlConfig = paths => {
     const 
         htmlViews = getHtmlInfo(paths),
         htmlPaths = getHtmlPaths(htmlViews);
-    console.log('INFOOO ---->',getHtmlPaths(htmlViews))
-    return htmlViews.map(htmlView => createHtmlPlugin(htmlView, htmlPaths));
-
-    // const
-    //     DEFAULT_SRC = 'src/html/',
-    //     HtmlWebpackConfig = paths.map(path => {
-    //         const
-    //             filename = `html/${path.replace(DEFAULT_SRC, '')}`,
-    //             template = path,
-    //             title = getTitle(filename);
-
-    //         return new HtmlWebpackPlugin({
-    //             filename,
-    //             template,
-    //             title,
-    //             customLinks: [
-    //             ]
-    //         });
-    //     });
-
-    // return HtmlWebpackConfig;
+        
+    return htmlViews
+        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths));
 };
 
 module.exports = {

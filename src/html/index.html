@@ -8,15 +8,16 @@
     </title>
 
 </head>
-    <section>
-        <% _.each(htmlWebpackPlugin.options.htmlPaths, function(path) { %>
-            <a href=<%= path %>> 
-                <%= path %>
-            </a>
-        <% }) %>
-    </section>
 <body>
     <h1>My index</h1>
+
+    <section>
+        <% _.each(htmlWebpackPlugin.options.htmlPaths, function(path) { %>
+        <a href=<%=path %>>
+            <%= path %>
+        </a>
+        <% }) %>
+    </section>
 </body>
 
 </html>
