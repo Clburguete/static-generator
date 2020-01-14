@@ -8,26 +8,35 @@ const
 
 module.exports = async () => {
   const
-    paths = await globby(['src/html/**']),
+    paths = await globby(["src/html/**"]),
     HtmlWebpackConfig = getHtmlConfig(paths);
-
     
   return {
-    entry: "./src/js/index.js",
+    entry: {
+      app : "./src/js/index.js"
+    },
     output: {
-      filename: "js/index.js",
       path: path.resolve("dist"),
+      filename: "js/index.js",
+      publicPath: '/'
     },
     devServer: {
-      openPage: 'index.html'
+      openPage: "html",
     },
     plugins: [
       new CleanWebpackPlugin(),
       ...HtmlWebpackConfig,
       new MiniCssExtractPlugin({
-        filename: 'css/main.css'
+        filename: "css/main.css"
       })
     ],
+    resolve: {
+      alias: {
+        "@css": path.resolve("src", "css"),
+        "@html": path.resolve("src", "html"),
+        "@js": path.resolve("src", "js")
+      }
+    },
     module: {
       rules: [
         {
