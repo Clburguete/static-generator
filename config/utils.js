@@ -4,14 +4,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const generateTitle = filename => (
     filename
-        .replace(/_/g, " ")
+        .replace(/_/g, ' ')
+        .charAt(5).toUpperCase()
+        + filename
+        .slice(6)
         .replace('.html', '')
-        .charAt(0).toUpperCase()
-        + filename.slice(1)
 );
 
 const getHtmlConfig = paths => {
-    const 
+    const
         DEFAULT_SRC = 'src/html/',
         HtmlWebpackConfig = paths.map(path => {
             const
