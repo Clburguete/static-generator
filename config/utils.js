@@ -27,7 +27,11 @@ const getHtmlInfo = paths => (
 );
 
 const getHtmlPaths = htmlInfo => (
-    htmlInfo.map(htmlView => htmlView.path.replace('src/', ''))
+    htmlInfo.map(htmlView => ({
+        path: htmlView.path.replace('src/', ''),
+        title: htmlView.title
+        })
+    )
 )
 
 const createHtmlPlugin = (htmlView, htmlPaths) => {
