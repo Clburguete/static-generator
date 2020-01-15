@@ -28,7 +28,7 @@ const getHtmlInfo = paths => (
 
 const getHtmlPaths = htmlInfo => (
     htmlInfo.map(htmlView => ({
-        path: htmlView.path.replace('src/', ''),
+        path: htmlView.path.replace('src', ''),
         title: htmlView.title
         })
     )

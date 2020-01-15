@@ -17,8 +17,7 @@ module.exports = async () => {
     },
     output: {
       path: path.resolve("dist"),
-      filename: "js/index.js",
-      publicPath: '/'
+      filename: "js/index.js"
     },
     devServer: {
       openPage: "html",
