@@ -39,7 +39,8 @@ const createHtmlPlugin = (htmlView, htmlPaths) => {
             title,
             template,
             filename,
-            htmlPaths
+            htmlPaths,
+            excludeChunks: ['app']
         })
         :
         new HtmlWebpackPlugin({
@@ -53,7 +54,7 @@ const getHtmlConfig = paths => {
     const 
         htmlViews = getHtmlInfo(paths),
         htmlPaths = getHtmlPaths(htmlViews);
-        
+
     return htmlViews
         .map(htmlView => createHtmlPlugin(htmlView, htmlPaths));
 };

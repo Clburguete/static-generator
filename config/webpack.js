@@ -1,9 +1,9 @@
 const 
   { getHtmlConfig } = require("./utils.js"),
+  { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   globby = require("globby"),
   path = require("path"),
-  MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-  { CleanWebpackPlugin } = require("clean-webpack-plugin");
+  MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = async () => {
