@@ -51,7 +51,11 @@ module.exports = async () => {
         },
         {
           test: /\.scss$/,
-          loader: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+          loader: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"
+          ]
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
