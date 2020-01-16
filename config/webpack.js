@@ -6,10 +6,12 @@ const
   MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
-module.exports = async () => {
+module.exports = async (env, argv) => {
+
   const
+    isDevelopment = argv.mode === 'development',
     paths = await globby(["src/html/**"]),
-    HtmlWebpackConfig = getHtmlConfig(paths);
+    HtmlWebpackConfig = getHtmlConfig(paths, isDevelopment);
     
   return {
     entry: {

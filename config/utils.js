@@ -34,7 +34,7 @@ const getHtmlPaths = htmlInfo => (
     )
 )
 
-const createHtmlPlugin = (htmlView, htmlPaths) => {
+const createHtmlPlugin = (htmlView, htmlPaths, isDevelopment) => {
     const
         { title, template, filename } = htmlView,
         isIndex = htmlView.title === 'Index';
@@ -51,16 +51,17 @@ const createHtmlPlugin = (htmlView, htmlPaths) => {
             title,
             template,
             filename,
+            isDevelopment
         })
 }
 
-const getHtmlConfig = paths => {
+const getHtmlConfig = (paths, isDevelopment) => {
     const 
         htmlViews = getHtmlInfo(paths),
         htmlPaths = getHtmlPaths(htmlViews);
 
     return htmlViews
-        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths));
+        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths, isDevelopment));
 };
 
 module.exports = {
