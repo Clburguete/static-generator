@@ -9,7 +9,15 @@
 </head>
 
 <body>
+    <% if (htmlWebpackPlugin.options.isDevelopment) { %>
+        <a href="index.html">
+            BACK
+        </a>
+    <% } %>
     <h1>Mi sitio web</h1>
+    <h2>
+        <%= htmlWebpackPlugin.options.isDevelopment %>
+    </h2>
     <div class="Panel">
         Esto es un panel
     </div>

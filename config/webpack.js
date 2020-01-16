@@ -1,15 +1,16 @@
 const 
   { getHtmlConfig } = require("./utils.js"),
+  { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   globby = require("globby"),
   path = require("path"),
-  MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-  { CleanWebpackPlugin } = require("clean-webpack-plugin");
+  MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
-module.exports = async () => {
+module.exports = async (env, argv) => {
   const
+    isDevelopment = argv.mode === 'development',
     paths = await globby(["src/html/**"]),
-    HtmlWebpackConfig = getHtmlConfig(paths);
+    HtmlWebpackConfig = getHtmlConfig(paths, isDevelopment);
     
   return {
     entry: {
@@ -17,8 +18,7 @@ module.exports = async () => {
     },
     output: {
       path: path.resolve("dist"),
-      filename: "js/index.js",
-      publicPath: '/'
+      filename: "js/index.js"
     },
     devServer: {
       openPage: "html",
@@ -52,7 +52,11 @@ module.exports = async () => {
         },
         {
           test: /\.scss$/,
-          loader: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+          loader: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"
+          ]
         },
         {
           test: /\.(png|svg|jpg|gif)$/,

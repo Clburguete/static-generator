@@ -27,35 +27,46 @@ const getHtmlInfo = paths => (
 );
 
 const getHtmlPaths = htmlInfo => (
-    htmlInfo.map(htmlView => htmlView.path.replace('src/', ''))
+    htmlInfo.map(htmlView => ({
+        path: htmlView.path.replace('src', ''),
+        title: htmlView.title
+        })
+    )
 )
 
-const createHtmlPlugin = (htmlView, htmlPaths) => {
+const createHtmlPlugin = (htmlView, htmlPaths, isDevelopment) => {
     const
         { title, template, filename } = htmlView,
         isIndex = htmlView.title === 'Index';
+
     return isIndex ?
-        new HtmlWebpackPlugin({
-            title,
-            template,
-            filename,
-            htmlPaths
-        })
+        isDevelopment ?
+            new HtmlWebpackPlugin({
+                title,
+                template,
+                filename,
+                htmlPaths,
+                excludeChunks: ['app']
+            })
+            :
+            undefined
         :
         new HtmlWebpackPlugin({
             title,
             template,
             filename,
+            isDevelopment
         })
 }
 
-const getHtmlConfig = paths => {
+const getHtmlConfig = (paths, isDevelopment) => {
     const 
         htmlViews = getHtmlInfo(paths),
         htmlPaths = getHtmlPaths(htmlViews);
-        
+
     return htmlViews
-        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths));
+        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths, isDevelopment))
+        .filter(htmlView => !!htmlView);
 };
 
 module.exports = {
