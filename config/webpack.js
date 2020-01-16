@@ -7,7 +7,6 @@ const
 
 
 module.exports = async (env, argv) => {
-
   const
     isDevelopment = argv.mode === 'development',
     paths = await globby(["src/html/**"]),

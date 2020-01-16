@@ -38,14 +38,18 @@ const createHtmlPlugin = (htmlView, htmlPaths, isDevelopment) => {
     const
         { title, template, filename } = htmlView,
         isIndex = htmlView.title === 'Index';
+
     return isIndex ?
-        new HtmlWebpackPlugin({
-            title,
-            template,
-            filename,
-            htmlPaths,
-            excludeChunks: ['app']
-        })
+        isDevelopment ?
+            new HtmlWebpackPlugin({
+                title,
+                template,
+                filename,
+                htmlPaths,
+                excludeChunks: ['app']
+            })
+            :
+            undefined
         :
         new HtmlWebpackPlugin({
             title,
@@ -61,7 +65,8 @@ const getHtmlConfig = (paths, isDevelopment) => {
         htmlPaths = getHtmlPaths(htmlViews);
 
     return htmlViews
-        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths, isDevelopment));
+        .map(htmlView => createHtmlPlugin(htmlView, htmlPaths, isDevelopment))
+        .filter(htmlView => !!htmlView);
 };
 
 module.exports = {
