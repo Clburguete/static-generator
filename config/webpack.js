@@ -1,25 +1,21 @@
-const 
+const
+  CONFIG = require("./constants.js"),
   { getHtmlConfig } = require("./utils.js"),
   { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   globby = require("globby"),
   path = require("path"),
   MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-
 module.exports = async (env, argv) => {
   const
-    isDevelopment = argv.mode === 'development',
+    { mode } = argv,
+    isDevelopment = mode === 'development',
     paths = await globby(["src/html/**"]),
     HtmlWebpackConfig = getHtmlConfig(paths, isDevelopment);
     
   return {
-    entry: {
-      app : "./src/js/index.js"
-    },
-    output: {
-      path: path.resolve("dist"),
-      filename: "js/index.js"
-    },
+    entry: CONFIG[mode].entry,
+    output: CONFIG[mode].output,
     devServer: {
       openPage: "html",
     },
@@ -27,7 +23,7 @@ module.exports = async (env, argv) => {
       new CleanWebpackPlugin(),
       ...HtmlWebpackConfig,
       new MiniCssExtractPlugin({
-        filename: "css/main.css"
+        filename: "css/[name].css"
       })
     ],
     resolve: {
@@ -67,6 +63,11 @@ module.exports = async (env, argv) => {
           use: ["file-loader"]
         }
       ]
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
     }
   };
 }
