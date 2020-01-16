@@ -13,7 +13,7 @@ module.exports =  {
   development: {
     entry: {
       app: "./src/js/index.js",
-      contentTable: "./src/test.js"
+      contentTable: "./private/index.js"
     },
     output: {
       path: path.resolve("dist"),
