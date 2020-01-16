@@ -55,7 +55,8 @@ const createHtmlPlugin = (htmlView, htmlPaths, isDevelopment) => {
             title,
             template,
             filename,
-            isDevelopment
+            isDevelopment,
+            excludeChunks: ['contentTable']
         })
 }
 
