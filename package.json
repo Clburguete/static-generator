@@ -4,7 +4,6 @@
   "description": "simple static web generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode=development --config config/ --open",
     "build": "webpack --config config/ --mode=production"
   },
